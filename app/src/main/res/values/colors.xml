@@ -1,0 +1,12 @@
+<!--?xml version="1.0" encoding="UTF-8"?-->
+<!-- I used https://material.io/ to generate a palette that represents the colours in the Thai flag -->
+<resources>
+    <color name="primaryColor">#f44336</color>
+    <color name="primaryLightColor">#ff7961</color>
+    <color name="primaryDarkColor">#ba000d</color>
+    <color name="secondaryColor">#1565c0</color>
+    <color name="secondaryLightColor">#5e92f3</color>
+    <color name="secondaryDarkColor">#003c8f</color>
+    <color name="primaryTextColor">#000000</color>
+    <color name="secondaryTextColor">#ffffff</color>
+</resources>

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/list_item_root"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/primaryColor"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/summary"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:background="@color/primaryLightColor">
+
+        <ImageView
+            android:id="@+id/thumbnail"
+            style="@style/Thumbnail"
+            android:src="@drawable/koh_pahank_sail_boat" />
+
+        <LinearLayout style="@style/SummaryLayout">
+
+            <TextView
+                android:id="@+id/title"
+                style="@style/TitleText"
+                android:textColor="@android:color/white"
+                tools:text="Phuket Sail Tours" />
+
+            <TextView
+                android:id="@+id/baht"
+                style="@style/TitleText"
+                tools:text="THB 4,100" />
+
+            <TextView
+                android:id="@+id/dollars"
+                style="@style/TitleText"
+                tools:text="AUD 164 " />
+
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/arrow"
+            style="@style/Expander"
+            android:src="@drawable/ic_arrow_drop_down_white_36dp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/extended"
+        style="@style/DetailLayout">
+
+        <TextView
+            android:id="@+id/description"
+            style="@style/SummaryText"
+            tools:text="Come aboard with us and see the best scenery in the world. Beautiful limestone formations rising straight up out of the sea... and better still, going ashore to explore the hidden lagoons (hongs), caves, and the haunted pirate lair (true, Captain Mark has seen and heard the ghost, but is waiting on directions to the treasure).\n\nOn our Koh Phanak Sail Caves and Hongs Tour we explore the caves and hongs (hidden lagoons), and find an isolated beach where we swim and have a picnic lunch. This tour is in Phang Nga Bay, home of the beautiful limestone Karst scenery. The day begins with a pick up from your hotel at around 7.45 am, arriving at the yacht at 8.45 am. We head off to Kho Phanak (Phanak Island), and either sail or motor to get there by 11.00 am." />
+
+        <ImageView
+            android:id="@+id/hero_image"
+            style="@style/HeroImage" />
+
+        <TextView
+            android:id="@+id/url"
+            style="@style/WebsiteUrl"
+            android:text="Visit the website" />
+
+    </LinearLayout>
+
+</LinearLayout>
