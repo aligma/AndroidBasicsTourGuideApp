@@ -2,7 +2,6 @@ package com.example.david.tourguideapp;
 
 import android.content.Context;
 import android.graphics.Paint;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,11 +12,23 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class InfoAdapter extends ArrayAdapter<Info> {
 
+    private HashMap<Integer, Integer> foodPriceLabels;
+
     public InfoAdapter(Context context, ArrayList<Info> infos) {
         super(context, 0, infos);
+        configureFoodPriceLabels();
+    }
+
+    private void configureFoodPriceLabels() {
+        foodPriceLabels = new HashMap<>();
+        foodPriceLabels.put(InfoFragment.LOW_PRICED_FOOD, R.string.low_priced_food);
+        foodPriceLabels.put(InfoFragment.MEDIUM_PRICED_FOOD, R.string.medium_priced_food);
+        foodPriceLabels.put(InfoFragment.HIGH_PRICED_FOOD, R.string.high_priced_food);
+        foodPriceLabels.put(InfoFragment.VERY_HIGH_PRICED_FOOD, R.string.very_high_priced_food);
     }
 
     @Override
@@ -82,24 +93,15 @@ public class InfoAdapter extends ArrayAdapter<Info> {
     }
 
     private void displayPricing(View listItemView, int baht, int dollars) {
-        if (baht == InfoData.NO_PRICE_INFORMATION && dollars == InfoData.NO_PRICE_INFORMATION) {
+        if (baht == InfoFragment.NO_PRICE_INFORMATION && dollars == InfoFragment.NO_PRICE_INFORMATION) {
             hideTextView(listItemView, R.id.baht);
             hideTextView(listItemView, R.id.dollars);
         } else if (baht < 0) {
-            if (baht == InfoData.LOW_PRICED_FOOD) {
-                setTextViewText(listItemView, R.id.baht, "฿ - ฿฿");
-            } else if (baht == InfoData.MEDIUM_PRICED_FOOD) {
-                setTextViewText(listItemView, R.id.baht, "฿฿ - ฿฿฿");
-            } else if (baht == InfoData.HIGH_PRICED_FOOD) {
-                setTextViewText(listItemView, R.id.baht, "฿฿฿ - ฿฿฿฿");
-            } else if (baht == InfoData.VERY_HIGH_PRICED_FOOD) {
-                setTextViewText(listItemView, R.id.baht, "฿฿฿฿");
-            } else {
-                setTextViewText(listItemView, R.id.baht, "?");
-            }
+            int label = (foodPriceLabels.containsKey(baht)) ? foodPriceLabels.get(baht) : R.string.unknown_priced_food;
+            setTextViewText(listItemView, R.id.baht, getContext().getString(label));
         } else {
-            setTextViewText(listItemView, R.id.baht, "฿" + Integer.toString(baht));
-            setTextViewText(listItemView, R.id.dollars, "$" + Integer.toString(dollars));
+            setTextViewText(listItemView, R.id.baht, getContext().getString(R.string.baht) + Integer.toString(baht));
+            setTextViewText(listItemView, R.id.dollars, getContext().getString(R.string.dollar) + Integer.toString(dollars));
         }
     }
 }
