@@ -16,7 +16,6 @@ public class InfoFragment extends Fragment {
     private int mPage;
 
     public static InfoFragment newInstance(int page) {
-        Log.v("InfoFragment", "page is " + page);
         Bundle args = new Bundle();
         args.putInt(ARG_PAGE, page);
         InfoFragment fragment = new InfoFragment();

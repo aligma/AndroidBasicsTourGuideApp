@@ -6,10 +6,9 @@ import android.view.View;
 
 public class UrlOnClickListener implements View.OnClickListener {
 
-    String mUrl;
+    private String mUrl;
 
-    public UrlOnClickListener(String url)
-    {
+    public UrlOnClickListener(String url) {
         mUrl = url;
     }
 

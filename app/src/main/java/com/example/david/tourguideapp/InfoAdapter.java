@@ -86,7 +86,6 @@ public class InfoAdapter extends ArrayAdapter<Info> {
             hideTextView(listItemView, R.id.baht);
             hideTextView(listItemView, R.id.dollars);
         } else if (baht < 0) {
-            Log.v("Info Adapter", "Baht " + baht);
             if (baht == InfoData.LOW_PRICED_FOOD) {
                 setTextViewText(listItemView, R.id.baht, "฿ - ฿฿");
             } else if (baht == InfoData.MEDIUM_PRICED_FOOD) {

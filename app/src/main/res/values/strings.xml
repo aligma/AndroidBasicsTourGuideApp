@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Phuket Tour Guide</string>
+    <string name="fun_tab">Fun</string>
+    <string name="food_tab">Food</string>
+    <string name="travel_tab">Travel</string>
+    <string name="hotels_tab">Hotels</string>
 </resources>
